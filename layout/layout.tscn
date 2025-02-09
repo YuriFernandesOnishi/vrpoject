@@ -39,9 +39,8 @@ material_properties = SubResource("Resource_nequ2")
 [node name="@CollisionShape3D@44314" type="CollisionShape3D" parent="output/Mesh000/@StaticBody3D@44313"]
 shape = SubResource("ConcavePolygonShape3D_1a7nl")
 
-[node name="LevelBuilder" type="Node" parent="." node_paths=PackedStringArray("output_folder", "geometry_folder", "scene_root")]
+[node name="LevelBuilder" type="Node" parent="." node_paths=PackedStringArray("output_folder", "scene_root")]
 script = ExtResource("2_7qbi1")
 output_folder = NodePath("../output")
-geometry_folder = NodePath("")
 scene_root = NodePath("..")
 force_flip_faces = true

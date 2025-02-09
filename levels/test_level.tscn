@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1jb40kertlxx"]
+
+[ext_resource type="PackedScene" uid="uid://bduix1mkfqnqi" path="res://assets/enviroments/world_light.tscn" id="1_8qgij"]
+[ext_resource type="Terrain3DMaterial" uid="uid://buwv8hixljyhm" path="res://levels/terrain/new_terrain_3d_material.tres" id="2_1r8ph"]
+[ext_resource type="Terrain3DAssets" uid="uid://p0pg0vs0ddwc" path="res://levels/terrain/new_terrain_3d_assets.tres" id="3_wjoa7"]
+
+[node name="TestLevel" type="Node3D"]
+
+[node name="WorldLight" parent="." instance=ExtResource("1_8qgij")]
+
+[node name="Terrain3D" type="Terrain3D" parent="."]
+data_directory = "res://levels/terrain"
+material = ExtResource("2_1r8ph")
+assets = ExtResource("3_wjoa7")
+top_level = true
+metadata/_edit_lock_ = true

@@ -13,6 +13,8 @@ reflected_light_source = 1
 
 [node name="Main" type="Node3D"]
 
+[node name="StartXR" parent="." instance=ExtResource("2_gs3kl")]
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8ss4y")
 
@@ -23,8 +25,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3424, 0.629689, 2.08618)
 light_color = Color(0.98411, 0.827333, 0.420152, 1)
 light_energy = 1.162
 omni_range = 1.824
-
-[node name="StartXR" parent="." instance=ExtResource("2_gs3kl")]
 
 [node name="PlayerVR" parent="." instance=ExtResource("3_rvtux")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97584, 1, 1.88967)
