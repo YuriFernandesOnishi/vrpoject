@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://54hn4r518s6b"]
+
+[ext_resource type="PackedScene" uid="uid://baytg3tr1jwgj" path="res://assets/nature/original/flower1.glb" id="1_a4vvt"]
+[ext_resource type="Shader" uid="uid://vnkcar4chy4i" path="res://shaders/flower1.tres" id="2_gl23c"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5bjnf"]
+render_priority = 0
+shader = ExtResource("2_gl23c")
+
+[node name="MultiMeshInstance3D" type="MultiMeshInstance3D"]
+visibility_range_begin = 5.0
+visibility_range_begin_margin = 10.0
+visibility_range_fade_mode = 1
+
+[node name="flower1" parent="." instance=ExtResource("1_a4vvt")]
+
+[node name="F1_Flower1Patch" parent="flower1" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.0183993, -0.00912222, 0.0121852)
+material_override = SubResource("ShaderMaterial_5bjnf")
+
+[editable path="flower1"]

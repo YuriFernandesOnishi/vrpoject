@@ -1,6 +1,7 @@
-[gd_resource type="Terrain3DAssets" load_steps=6 format=3 uid="uid://p0pg0vs0ddwc"]
+[gd_resource type="Terrain3DAssets" load_steps=8 format=3 uid="uid://p0pg0vs0ddwc"]
 
 [ext_resource type="Texture2D" path="res://textures/grass01_alb_ht.dds" id="1_3lmfc"]
+[ext_resource type="PackedScene" uid="uid://54hn4r518s6b" path="res://assets/nature/multMeshes/multi_mesh_flower1.tscn" id="1_u1myj"]
 [ext_resource type="Texture2D" path="res://textures/grass01_nrm_rgh.dds" id="2_76qjy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v1t5k"]
@@ -17,6 +18,13 @@ distance_fade_max_distance = 75.0
 material_override = SubResource("StandardMaterial3D_v1t5k")
 generated_type = 1
 
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_f7axo"]
+name = "multi_mesh_flower1"
+id = 1
+visibility_range = 200.0
+cast_shadows = 0
+scene_file = ExtResource("1_u1myj")
+
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_mnr32"]
 name = "grass01"
 albedo_texture = ExtResource("1_3lmfc")
@@ -24,5 +32,5 @@ normal_texture = ExtResource("2_76qjy")
 uv_scale = 0.8
 
 [resource]
-mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_wbtxp")])
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_wbtxp"), SubResource("Terrain3DMeshAsset_f7axo")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_mnr32")])
