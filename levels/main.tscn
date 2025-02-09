@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://by1msh2dkm2t0" path="res://layout/layout.tscn" id="2_1g13j"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="2_gs3kl"]
-[ext_resource type="PackedScene" uid="uid://0lo0lb2ruxq2" path="res://characters/player_vr.tscn" id="3_rvtux"]
+[ext_resource type="PackedScene" uid="uid://43v0um2kmd66" path="res://characters/player/player.tscn" id="3_swqre"]
 
 [sub_resource type="Environment" id="Environment_8ss4y"]
 background_mode = 1
@@ -26,5 +26,5 @@ light_color = Color(0.98411, 0.827333, 0.420152, 1)
 light_energy = 1.162
 omni_range = 1.824
 
-[node name="PlayerVR" parent="." instance=ExtResource("3_rvtux")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97584, 1, 1.88967)
+[node name="CharacterBody3D" parent="." instance=ExtResource("3_swqre")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -0.0298721, 2)

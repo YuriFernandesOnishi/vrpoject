@@ -138,7 +138,7 @@ mesh = SubResource("CapsuleMesh_oft1o")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="CollisionShape3D/MeshInstance3D"]
-transform = Transform3D(-5.8662e-09, 0, 0.58542, 0, 0.224814, 0, -0.134203, 0, -2.55895e-08, 0.0361452, 0.475929, -0.439586)
+transform = Transform3D(-5.8662e-09, 0, 0.58542, 0, 0.224814, 0, -0.134203, 0, -2.55895e-08, 0.0361452, 0.475929, -0.378794)
 visible = false
 material_override = SubResource("StandardMaterial3D_pkg4l")
 mesh = SubResource("BoxMesh_617hf")
@@ -150,9 +150,6 @@ skeleton = NodePath("../../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CameraBoom"]
-
-[node name="ReflectionProbe" type="ReflectionProbe" parent="CameraBoom/Camera3D"]
-update_mode = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

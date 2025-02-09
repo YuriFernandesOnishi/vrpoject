@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4cvpeiucqew"]
+
+[ext_resource type="PackedScene" uid="uid://dqw3xqcxh7jvj" path="res://assets/nature/original/Log1.glb" id="1_g8k1w"]
+[ext_resource type="Texture2D" uid="uid://kvxfqxbbufkh" path="res://textures/TexturePalette.tres" id="2_hsvl3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dngvx"]
+specular_mode = 1
+albedo_texture = ExtResource("2_hsvl3")
+
+[node name="Log12" instance=ExtResource("1_g8k1w")]
+
+[node name="Log1" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_dngvx")

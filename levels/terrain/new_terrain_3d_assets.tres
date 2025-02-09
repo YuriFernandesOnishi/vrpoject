@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" path="res://textures/grass01_alb_ht.dds" id="1_3lmfc"]
 [ext_resource type="Texture2D" path="res://textures/grass01_nrm_rgh.dds" id="2_76qjy"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4spgw"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v1t5k"]
 transparency = 4
 cull_mode = 2
 vertex_color_use_as_albedo = true
@@ -13,17 +13,16 @@ distance_fade_mode = 1
 distance_fade_min_distance = 85.0
 distance_fade_max_distance = 75.0
 
-[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_fa35p"]
-material_override = SubResource("StandardMaterial3D_4spgw")
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_wbtxp"]
+material_override = SubResource("StandardMaterial3D_v1t5k")
 generated_type = 1
 
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_mnr32"]
 name = "grass01"
 albedo_texture = ExtResource("1_3lmfc")
 normal_texture = ExtResource("2_76qjy")
-uv_scale = 2.0
-detiling = 0.189
+uv_scale = 0.8
 
 [resource]
-mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_fa35p")])
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_wbtxp")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_mnr32")])
