@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1jb40kertlxx"]
+
+[ext_resource type="PackedScene" uid="uid://bduix1mkfqnqi" path="res://assets/enviroments/world_light.tscn" id="1_8qgij"]
+[ext_resource type="Terrain3DMaterial" uid="uid://buwv8hixljyhm" path="res://levels/terrain/new_terrain_3d_material.tres" id="2_1r8ph"]
+[ext_resource type="Terrain3DAssets" uid="uid://p0pg0vs0ddwc" path="res://levels/terrain/new_terrain_3d_assets.tres" id="3_wjoa7"]
+[ext_resource type="PackedScene" uid="uid://43v0um2kmd66" path="res://characters/player/player.tscn" id="4_3ukaj"]
+
+[node name="TestLevel" type="Node3D"]
+
+[node name="WorldLight" parent="." instance=ExtResource("1_8qgij")]
+transform = Transform3D(-0.9753, 0, -0.220884, -0.152641, -0.72281, 0.673978, -0.159658, 0.691046, 0.704957, 0, 0, 0)
+
+[node name="Terrain3D" type="Terrain3D" parent="."]
+data_directory = "res://levels/terrain"
+material = ExtResource("2_1r8ph")
+assets = ExtResource("3_wjoa7")
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." instance=ExtResource("4_3ukaj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 127.992, 1.94726, 129.359)
