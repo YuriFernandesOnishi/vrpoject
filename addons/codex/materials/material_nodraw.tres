@@ -1,6 +1,5 @@
-[gd_resource type="StandardMaterial3D" script_class="LevelMaterial" load_steps=5 format=3 uid="uid://bewi28uxnfjj"]
+[gd_resource type="StandardMaterial3D" script_class="LevelMaterial" load_steps=4 format=3 uid="uid://bewi28uxnfjj"]
 
-[ext_resource type="Texture2D" uid="uid://gp8h7u0ls2n" path="res://addons/codex/textures/NoDraw2.png" id="1_1orgg"]
 [ext_resource type="Script" path="res://addons/codex/classes/material_properties.gd" id="2_yqdx3"]
 [ext_resource type="Script" path="res://addons/codex/classes/material_diffuse.gd" id="3_xx8ok"]
 
@@ -17,7 +16,6 @@ shading_mode = 0
 diffuse_mode = 1
 specular_mode = 2
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("1_1orgg")
 texture_filter = 2
 script = ExtResource("3_xx8ok")
 material_properties = SubResource("Resource_yyqrr")

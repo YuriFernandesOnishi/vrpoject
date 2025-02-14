@@ -1,6 +1,5 @@
-[gd_resource type="StandardMaterial3D" script_class="LevelMaterial" load_steps=5 format=3 uid="uid://bf4c0tjngqow8"]
+[gd_resource type="StandardMaterial3D" script_class="LevelMaterial" load_steps=4 format=3 uid="uid://bf4c0tjngqow8"]
 
-[ext_resource type="Texture2D" uid="uid://cxokuyjpobuxj" path="res://addons/codex/textures/Default.png" id="1_bul7c"]
 [ext_resource type="Script" path="res://addons/codex/classes/material_properties.gd" id="2_ysnry"]
 [ext_resource type="Script" path="res://addons/codex/classes/material_diffuse.gd" id="3_cdew8"]
 
@@ -10,11 +9,8 @@ material_id = 0
 material_type = 0
 
 [resource]
-diffuse_mode = 1
-specular_mode = 2
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.754537, 0.739894, 0.665944, 1)
-albedo_texture = ExtResource("1_bul7c")
+albedo_color = Color(0.384314, 0.403922, 0.345098, 1)
 metallic_specular = 0.0
 texture_filter = 2
 script = ExtResource("3_cdew8")

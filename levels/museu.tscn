@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dp6pnsm6x1x0j"]
+[gd_scene load_steps=15 format=4 uid="uid://dp6pnsm6x1x0j"]
 
 [ext_resource type="Material" uid="uid://bf4c0tjngqow8" path="res://addons/codex/materials/material_default.tres" id="2_klu82"]
 [ext_resource type="Script" path="res://addons/codex/classes/level_collider.gd" id="3_dkgd0"]
@@ -7,11 +7,13 @@
 [ext_resource type="Script" path="res://addons/codex/classes/material_properties.gd" id="4_o0gch"]
 [ext_resource type="Texture2D" path="res://textures/text_manto.dds" id="6_w6ow4"]
 [ext_resource type="PackedScene" uid="uid://fst1rxdbcv3w" path="res://assets/meshes/manto.tscn" id="7_85b2y"]
+[ext_resource type="PackedScene" uid="uid://c5u62sug6el30" path="res://assets/meshes/cube.tscn" id="8_knjwa"]
 
 [sub_resource type="Environment" id="Environment_c2b0d"]
+background_mode = 1
+background_color = Color(0.76662, 0.76662, 0.76662, 1)
 ambient_light_source = 2
 ambient_light_color = Color(0.881077, 0.860015, 0.803111, 1)
-ambient_light_energy = 1.79
 reflected_light_source = 1
 tonemap_mode = 3
 tonemap_exposure = 0.7
@@ -46,6 +48,33 @@ albedo_texture = ExtResource("6_w6ow4")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_c2b0d")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.51199, 5, 4.4597)
+light_energy = 6.8
+light_bake_mode = 1
+shadow_enabled = true
+shadow_opacity = 0.74
+shadow_blur = 6.556
+omni_range = 17.886
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.512, 5, 4.4597)
+light_energy = 6.8
+light_bake_mode = 1
+shadow_enabled = true
+shadow_opacity = 0.74
+shadow_blur = 6.556
+omni_range = 17.886
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.512, 5, 4.4597)
+light_energy = 6.8
+light_bake_mode = 1
+shadow_enabled = true
+shadow_opacity = 0.74
+shadow_blur = 6.556
+omni_range = 17.886
+
 [node name="output" type="Node3D" parent="."]
 
 [node name="Mesh000" type="MeshInstance3D" parent="output"]
@@ -64,13 +93,23 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7, 0, 
 [node name="Area3D" parent="." instance=ExtResource("4_jrgqx")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 7, 1, 2)
 
-[node name="text_tupinamba" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 17, 1, 5)
+[node name="manto" parent="." instance=ExtResource("7_85b2y")]
+transform = Transform3D(-6.55671e-09, 0.15, -6.55671e-09, 0, -6.55671e-09, -0.15, -0.15, -6.55671e-09, 2.86603e-16, 16.5694, 1.90987, 4.23148)
+
+[node name="text_tupinamba" type="MeshInstance3D" parent="manto"]
+transform = Transform3D(3.33333, 0, 0, 0, 3.33333, 0, 0, 0, 3.33333, 2.87066, 1.98493, 3.93967)
 material_override = SubResource("StandardMaterial3D_3587w")
 mesh = SubResource("PlaneMesh_hegc7")
+skeleton = NodePath("../..")
 
-[node name="manto" parent="." instance=ExtResource("7_85b2y")]
-transform = Transform3D(0.15, 0, 0, 0, -6.55671e-09, -0.15, 0, 0.15, -6.55671e-09, 16.5694, 1.59095, 4.70226)
+[node name="text_tupinamba2" type="MeshInstance3D" parent="manto"]
+transform = Transform3D(-3.33333, -2.5166e-07, -4.18961e-14, 2.5166e-07, -3.33333, 2.91409e-07, -1.10004e-14, 2.91409e-07, 3.33333, -3.79601, -1.65958, 3.93967)
+material_override = SubResource("StandardMaterial3D_3587w")
+mesh = SubResource("PlaneMesh_hegc7")
+skeleton = NodePath("../..")
+
+[node name="cube" parent="manto" instance=ExtResource("8_knjwa")]
+transform = Transform3D(12.6539, 0, 0, 0, -2.91409e-07, 6.66667, 0, -6.66667, -2.91409e-07, 0.113045, -0.0229073, 13.0472)
 
 [connection signal="body_entered" from="Area3D" to="CharacterBody3D" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="CharacterBody3D" method="_on_area_3d_body_exited"]
