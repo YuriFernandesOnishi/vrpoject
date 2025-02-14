@@ -9,6 +9,8 @@ material_id = 0
 material_type = 0
 
 [resource]
+diffuse_mode = 1
+specular_mode = 2
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.384314, 0.403922, 0.345098, 1)
 metallic_specular = 0.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://dp6pnsm6x1x0j"]
+[gd_scene load_steps=19 format=4 uid="uid://dp6pnsm6x1x0j"]
 
 [ext_resource type="Material" uid="uid://bf4c0tjngqow8" path="res://addons/codex/materials/material_default.tres" id="2_klu82"]
 [ext_resource type="Script" path="res://addons/codex/classes/level_collider.gd" id="3_dkgd0"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" path="res://textures/text_manto.dds" id="6_w6ow4"]
 [ext_resource type="PackedScene" uid="uid://fst1rxdbcv3w" path="res://assets/meshes/manto.tscn" id="7_85b2y"]
 [ext_resource type="PackedScene" uid="uid://c5u62sug6el30" path="res://assets/meshes/cube.tscn" id="8_knjwa"]
+[ext_resource type="Texture2D" uid="uid://d2d15hakp7ng3" path="res://textures/fogonafloresta.png" id="9_u6ur6"]
+[ext_resource type="Texture2D" uid="uid://dto8jmx6lytyi" path="res://textures/quadroff.png" id="10_nrbdr"]
 
 [sub_resource type="Environment" id="Environment_c2b0d"]
 background_mode = 1
@@ -42,6 +44,12 @@ data = PackedVector3Array(3, 0, 0, 0, 0, 0, 0, 3, 0, 3, 0, 0, 0, 3, 0, 3, 3, 0, 
 albedo_texture = ExtResource("6_w6ow4")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_hegc7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ls31h"]
+albedo_texture = ExtResource("9_u6ur6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2kt8y"]
+albedo_texture = ExtResource("10_nrbdr")
 
 [node name="museu" type="Node3D"]
 
@@ -92,9 +100,10 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7, 0, 
 
 [node name="Area3D" parent="." instance=ExtResource("4_jrgqx")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 7, 1, 2)
+visible = false
 
 [node name="manto" parent="." instance=ExtResource("7_85b2y")]
-transform = Transform3D(-6.55671e-09, 0.15, -6.55671e-09, 0, -6.55671e-09, -0.15, -0.15, -6.55671e-09, 2.86603e-16, 16.5694, 1.90987, 4.23148)
+transform = Transform3D(-6.55671e-09, 0.15, -6.55671e-09, 0, -6.55671e-09, -0.15, -0.15, -6.55671e-09, 2.86603e-16, 16.5694, 1.90987, 4.54993)
 
 [node name="text_tupinamba" type="MeshInstance3D" parent="manto"]
 transform = Transform3D(3.33333, 0, 0, 0, 3.33333, 0, 0, 0, 3.33333, 2.87066, 1.98493, 3.93967)
@@ -110,6 +119,16 @@ skeleton = NodePath("../..")
 
 [node name="cube" parent="manto" instance=ExtResource("8_knjwa")]
 transform = Transform3D(12.6539, 0, 0, 0, -2.91409e-07, 6.66667, 0, -6.66667, -2.91409e-07, 0.113045, -0.0229073, 13.0472)
+
+[node name="qrcode_fogof" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.25841e-08, 0.2, -8.74228e-09, 0, -8.74228e-09, -0.2, -0.2, -3.25841e-08, 1.4243e-15, 0.01, 1.3036, 1.97752)
+material_override = SubResource("StandardMaterial3D_ls31h")
+mesh = SubResource("PlaneMesh_hegc7")
+
+[node name="quadro_fogof" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.25841e-07, 2, -4.37114e-08, 0, -8.74228e-08, -1, -2, -3.25841e-07, 7.12149e-15, 0.00878581, 2.55749, 4.31995)
+material_override = SubResource("StandardMaterial3D_2kt8y")
+mesh = SubResource("PlaneMesh_hegc7")
 
 [connection signal="body_entered" from="Area3D" to="CharacterBody3D" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="CharacterBody3D" method="_on_area_3d_body_exited"]
