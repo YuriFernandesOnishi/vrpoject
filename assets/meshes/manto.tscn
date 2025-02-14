@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://fst1rxdbcv3w"]
+
+[ext_resource type="ArrayMesh" uid="uid://yi5k8ekkiv5j" path="res://assets/meshes/plane.obj" id="1_sg3hu"]
+[ext_resource type="Texture2D" path="res://textures/manto_frente.dds" id="2_tu3w1"]
+[ext_resource type="Texture2D" path="res://textures/manto_costas.dds" id="3_dyinc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4evos"]
+albedo_texture = ExtResource("2_tu3w1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hb4qq"]
+albedo_texture = ExtResource("3_dyinc")
+
+[node name="manto" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_sg3hu")
+surface_material_override/0 = SubResource("StandardMaterial3D_4evos")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0, 0)
+mesh = ExtResource("1_sg3hu")
+surface_material_override/0 = SubResource("StandardMaterial3D_hb4qq")

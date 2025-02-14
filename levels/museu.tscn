@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dp6pnsm6x1x0j"]
+[gd_scene load_steps=14 format=4 uid="uid://dp6pnsm6x1x0j"]
 
 [ext_resource type="Material" uid="uid://bf4c0tjngqow8" path="res://addons/codex/materials/material_default.tres" id="2_klu82"]
 [ext_resource type="Script" path="res://addons/codex/classes/level_collider.gd" id="3_dkgd0"]
@@ -6,6 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://cg3pmxr7enr28" path="res://assets/text_collision.tscn" id="4_jrgqx"]
 [ext_resource type="Script" path="res://addons/codex/classes/material_properties.gd" id="4_o0gch"]
 [ext_resource type="Texture2D" path="res://textures/text_manto.dds" id="6_w6ow4"]
+[ext_resource type="PackedScene" uid="uid://fst1rxdbcv3w" path="res://assets/meshes/manto.tscn" id="7_85b2y"]
+
+[sub_resource type="Environment" id="Environment_c2b0d"]
+ambient_light_source = 2
+ambient_light_color = Color(0.881077, 0.860015, 0.803111, 1)
+ambient_light_energy = 1.79
+reflected_light_source = 1
+tonemap_mode = 3
+tonemap_exposure = 0.7
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_r6a3q"]
 _surfaces = [{
@@ -34,6 +43,9 @@ albedo_texture = ExtResource("6_w6ow4")
 
 [node name="museu" type="Node3D"]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_c2b0d")
+
 [node name="output" type="Node3D" parent="."]
 
 [node name="Mesh000" type="MeshInstance3D" parent="output"]
@@ -56,6 +68,9 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 7, 1, 2)
 transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 17, 1, 5)
 material_override = SubResource("StandardMaterial3D_3587w")
 mesh = SubResource("PlaneMesh_hegc7")
+
+[node name="manto" parent="." instance=ExtResource("7_85b2y")]
+transform = Transform3D(0.15, 0, 0, 0, -6.55671e-09, -0.15, 0, 0.15, -6.55671e-09, 16.5694, 1.59095, 4.70226)
 
 [connection signal="body_entered" from="Area3D" to="CharacterBody3D" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="CharacterBody3D" method="_on_area_3d_body_exited"]
