@@ -91,3 +91,11 @@ func toggle_crouch():
 func _on_animation_player_animation_started(anim_name: StringName) -> void:
 	if anim_name == "Crouch":
 		_is_crounching = !_is_crounching
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	print("ENTROU")
+
+
+func _on_area_3d_body_exited(body: Node3D) -> void:
+	print("SAIU")

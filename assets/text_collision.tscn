@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg3pmxr7enr28"]
+
+[sub_resource type="GDScript" id="GDScript_ijaof"]
+resource_local_to_scene = true
+script/source = "extends Node3D
+
+@export var texto : String = \"\"
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o8v57"]
+
+[node name="Area3D" type="Area3D"]
+script = SubResource("GDScript_ijaof")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_o8v57")
